@@ -35,6 +35,7 @@ namespace Tests
             mockServer.Stub(z => z.Get("/*"))
                     .Return(res)
                     .OK();
+
             Task.Run(() =>
             {
                 double result = Task.Run(() => client.Calculate(x, y, op)).Result;
